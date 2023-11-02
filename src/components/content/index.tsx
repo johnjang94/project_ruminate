@@ -1,10 +1,9 @@
-import React from 'react'
-import { ReactElement } from 'react'
+import { ReactElement } from "react";
 
 interface contentProps {
-  style?: string
-  border: string
-  children: ReactElement
+  style?: string;
+  border: string;
+  children: ReactElement;
 }
 
 export default function Content({ style, children, border }: contentProps) {
@@ -15,5 +14,5 @@ export default function Content({ style, children, border }: contentProps) {
       <div className={`${style}`}> {children}</div>
       {border && <div className={`${border}`}></div>}
     </div>
-  )
+  );
 }
