@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
   return (
     <>
       <NavBar />
-      {children}
+      <main className="w-[100vw] h-[100vh]"> {children}</main>
       <Footer />
     </>
   )
