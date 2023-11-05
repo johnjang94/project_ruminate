@@ -1,3 +1,4 @@
+ 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { GeneralContextProvider } from './contexts/GeneralContext'
 import Home from './pages/home'
@@ -8,6 +9,7 @@ import EvaluatorDashboard from './pages/evaluator/evaluator-dashboard/EvaluatorD
 import Registration from './pages/authentication/registration'
 import { AuthContextProvider } from './contexts/AuthContext'
 import Login from './pages/authentication/login'
+ 
 
 export default function App() {
   const router = createBrowserRouter([
@@ -23,11 +25,13 @@ export default function App() {
       // errorElement: <NotFound />,
       children: [
         { index: true, element: <Home /> },
+ 
         { path: '/admin', element: <AdminDashboard /> },
         { path: '/producer', element: <ProducerDashboard /> },
         { path: '/evaluator', element: <EvaluatorDashboard /> },
         { path: 'signup', element: <Registration /> },
         { path: 'signin', element: <Login /> },
+ 
       ],
     },
   ])

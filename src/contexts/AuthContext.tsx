@@ -1,3 +1,4 @@
+ 
 import { onAuthStateChanged } from 'firebase/auth'
 import { createContext, useContext, useEffect, useReducer } from 'react'
 import { auth } from '../firebase/firebase'
@@ -66,3 +67,4 @@ export const UseAuthContext = () => {
 
   return context
 }
+

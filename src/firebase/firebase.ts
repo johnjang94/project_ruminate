@@ -24,3 +24,4 @@ const storage = getStorage(app)
 export { auth, db, storage }
 
 export default app
+
