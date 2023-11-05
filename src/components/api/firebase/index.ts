@@ -32,6 +32,14 @@ export function login() {
       console.log(user);
     })
     .catch(console.error);
+
+  //   signInWithEmailAndPassword(auth, email, password)
+  // .then((userCredential) => {
+  //   // Signed in
+  //   const user = userCredential.user;
+  //   console.log(user)
+  // })
+  // .catch(console.error);
 }
 
 export default app;
