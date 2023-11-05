@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import BrandLogo from "@assets/images/brand-logo.svg";
 
 // REACT ICONS HERE
-import { CgProfile } from "react-icons/Cg";
+import { CgProfile } from "react-icons/cg";
 import { login } from "../api/firebase";
 
 export default function NavBar() {
