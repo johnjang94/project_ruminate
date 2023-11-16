@@ -13,4 +13,7 @@ export default {
     },
   },
   plugins: [],
+  fonts: {
+    manrope: ["Manrope", "sans-serif"],
+  },
 };
