@@ -1,18 +1,18 @@
+// List.tsx
 import React from "react";
 
-interface ListItem {
-  fileName: string;
+interface ListProps {
+  files: File[];
 }
 
-const List: React.FC = () => {
-  const [list] = React.useState<ListItem[]>([]);
-
+const List: React.FC<ListProps> = ({ files }) => {
   return (
     <div>
-      {list.length > 0 && (
+      <h1 className="text-white py-4">Uploaded Files</h1>
+      {files.length > 0 && (
         <div>
-          {list.map((item) => (
-            <span key={item.fileName}>{item.fileName}</span>
+          {files.map((file, index) => (
+            <span key={index}>{file.name}</span>
           ))}
         </div>
       )}

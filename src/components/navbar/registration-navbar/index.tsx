@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import BrandLogo from "@assets/brand/brand-logo.svg";
 import { useState } from "react";
 
-export default function NavBar() {
+export default function RegistrationNavbar() {
   const [hover, setHover] = useState(false);
   return (
     <>
@@ -47,8 +47,9 @@ export default function NavBar() {
             </button>
           </Link>
         </div>
-        <button className="text-[#0F7B41] text-xl shrink-0 w-48 h-11 rounded-2xl bg-white text-center font-manrope font-bold">
-          <Link to="/registration">GET STARTED</Link>
+        {/* I am leaving the following button empty so that the spacing balance can be maintained */}
+        <button className="text-[#0F7B41] w-48 h-11 rounded-2xl" disabled>
+          .
         </button>
       </nav>
     </>

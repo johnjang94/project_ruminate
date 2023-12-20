@@ -1,11 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useReducer, useState } from "react";
-// import { FcGoogle } from "react-icons/fc";
-import {
-  // GoogleAuthProvider,
-  signInWithEmailAndPassword,
-  // signInWithPopup,
-} from "firebase/auth";
+
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { UserContext } from "@contexts/UserContext";
 import { auth } from "@components/api/firebase";
 
@@ -23,7 +19,7 @@ interface LoginInfo {
   password: string;
 }
 
-// reducer function for login email & pass
+// reducer function for login email & password
 function loginReducer(loginInfo: LoginInfo, action: Action) {
   switch (action.type) {
     case "changeEmail":
@@ -36,14 +32,10 @@ function loginReducer(loginInfo: LoginInfo, action: Action) {
 }
 
 export default function Login() {
-  // get the logged in user (or lack thereof) from context provider
   const user = useContext(UserContext);
-
-  // for redirecting to dashboard if a user is already signed in
   const navigate = useNavigate();
 
   useEffect(() => {
-    // will redirect user to correct dashboard according to their role
     if (user) {
       switch (user.role) {
         case "admin":
@@ -56,8 +48,6 @@ export default function Login() {
           navigate("/evaluator");
           break;
         default:
-          // XXX
-          // what should we do here, if for some reason user doesn't have role?
           break;
       }
     }
@@ -187,18 +177,6 @@ export default function Login() {
     }
   };
 
-  // const provider = new GoogleAuthProvider();
-
-  // const loginUserGoogle = async () => {
-  //   try {
-  //     await signInWithPopup(auth, provider);
-  //   } catch (err) {
-  //     // XXX
-  //     // Handle better (display to user)
-  //     console.error(err);
-  //   }
-  // };
-
   return (
     <div className="py-[142px] w-[316px] mx-auto">
       <section>
@@ -278,17 +256,6 @@ export default function Login() {
         >
           Log in
         </button>
-        {/* <p className="text-center py-4">OR</p>
-        <div className="border border-[#BE493A] w-full h-8 rounded-md mb-4">
-          <button
-            onClick={loginUserGoogle}
-            className="gap-1 flex items-center mx-auto text-[#BE493A] text-base font-normal leading-7"
-            type="button"
-          >
-            <FcGoogle />
-            Login with Google
-          </button>
-        </div> */}
         <p className="text-primary-B500 text-xs font-normal text-center pt-4">
           By using Feedback you agree to the{" "}
           <span className="text-[#0563E0] text-xs font-normal">
